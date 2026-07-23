@@ -275,6 +275,8 @@ services:
     <<: *restart_policy
     image: "chrislusf/seaweedfs:4.29_large_disk@sha256:e5ca7cc6b61cf5d89a5f85821e0cf115a9765e2d1f27223cbb7722c7837c024e"
     entrypoint: "weed"
+    ports:
+      - 8333:8333
     command: >-
         mini
         -dir=/data
