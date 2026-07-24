@@ -170,8 +170,7 @@ services:
       <<: *healthcheck_defaults
       # Using default user "postgres" from sentry/sentry.conf.example.py or value of POSTGRES_USER if provided
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
-    command:
-      ["postgres"]
+    command: ["postgres", "-c", "wal_level=logical"]
     environment:
       POSTGRES_HOST_AUTH_METHOD: "trust"
     volumes:
