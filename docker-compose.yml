@@ -235,6 +235,9 @@ services:
   clickhouse:
     <<: [*restart_policy, *pull_policy]
     image: clickhouse-self-hosted-local
+    ports:
+      - 19000:9000
+      - 8123:8123
     build:
       context: ./clickhouse
       args:
