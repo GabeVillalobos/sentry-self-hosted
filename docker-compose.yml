@@ -533,7 +533,7 @@ services:
       <<: *file_healthcheck_defaults
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       endpoint_mode: vip
   attachments-consumer:
     <<: *sentry_defaults
@@ -547,7 +547,7 @@ services:
       <<: *file_healthcheck_defaults
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       endpoint_mode: vip
   ##############################################
   ## Feature Complete Sentry Ingest Consumers ##
@@ -561,7 +561,7 @@ services:
       - feature-complete
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       endpoint_mode: vip
   metrics-consumer:
     <<: *sentry_defaults
